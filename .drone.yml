@@ -1,0 +1,43 @@
+kind: pipeline
+type: docker
+name: arm
+
+platform:
+  arch: arm
+
+steps:
+- name: codacy
+  image: plugins/codacy
+  settings:
+    token:
+      from_secret: codacy_token
+
+- name: docker
+  image: plugins/docker
+  settings:
+    username:
+      from_secret: dockerhub_user
+    password:
+      from_secret: dockerhub_password
+    repo: scratchitea3/iotunnel
+    tags:
+      - arm-latest
+---
+kind: pipeline
+type: docker
+name: x86
+
+platform:
+  arch: amd64
+
+steps:
+- name: docker
+  image: plugins/docker
+  settings:
+    username:
+      from_secret: dockerhub_user
+    password:
+      from_secret: dockerhub_password
+    repo: scratchitea3/iotunnel
+    tags:
+      - latest
