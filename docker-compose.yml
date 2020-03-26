@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+    www:
+      image: nginxdemos/hello
+      ports:
+        - 8080:80
+    lt:
+      image: scratchitea3/iotunnel
