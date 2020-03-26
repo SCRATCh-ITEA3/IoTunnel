@@ -3,7 +3,10 @@
 
 a docker solution for IoT tunneling
 
-## about
+## how to start
+
+First download this git repository and run `docker-compose up`.
+
 The docker compose will start a demonstrator webserver running at:
 
 http://localhost:8080/
