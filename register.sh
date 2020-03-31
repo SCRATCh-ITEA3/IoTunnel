@@ -7,7 +7,7 @@ sleep 5
 line=$(head -n 1 url.txt)
 
 # registring to our scratch portal
-URL=${line:20}
+URL=${line:21}
 wget https://nodered.consider-iot.com/scratch/add/$URL > /dev/null
 
 # keep the container running
